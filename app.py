@@ -16,7 +16,7 @@ def index():
         os.environ["REPLICATE_API_TOKEN"] = "787f515cb0624813736c11e7fefec66473394f02"
         model = replicate.models.get("tstramer/midjourney-diffusion")
         version = model.versions.get("436b051ebd8f68d23e83d22de5e198e0995357afef113768c20f0b6fcef23c8b")
-        inputs = {'prompt': t, 'height':256, 'width':256}
+        inputs = {'prompt': t, 'height':768, 'width':768}
         output = version.predict(**inputs)
         return(render_template("index.html",result=output[0]))
     else:
