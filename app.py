@@ -18,7 +18,7 @@ def index():
         version = model.versions.get("436b051ebd8f68d23e83d22de5e198e0995357afef113768c20f0b6fcef23c8b")
         inputs = {'prompt': t, 'height':256, 'width':256}
         output = version.predict(**inputs)
-        return(render_template("index.html",result=output))
+        return(render_template("index.html",result=output[0]))
     else:
         return(render_template("index.html",result="waiting"))
 
